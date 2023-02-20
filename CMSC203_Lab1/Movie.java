@@ -57,3 +57,6 @@ public class Movie {
 		return (this.title+" ("+this.rating+"): Tickets Sold: "+this.soldTickets);
 	}
 }
+
+
+
