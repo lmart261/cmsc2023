@@ -1,8 +1,4 @@
-/**
- * Movie class, represents a Movie object
- * @author ralexander
- *
- */
+
 public class Movie {
 
 	private String title;
