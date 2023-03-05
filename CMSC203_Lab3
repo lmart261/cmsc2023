@@ -1,0 +1,68 @@
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+//GradebookTester class
+public class GradebookTester
+{
+private Gradebook gradeBook1;
+private Gradebook gradeBook2;
+
+@Before
+public void setUp()
+{
+
+gradeBook1 = new Gradebook(5);
+gradeBook2 = new Gradebook(5);
+
+gradeBook1.addScore(75.0);
+gradeBook1.addScore(85.0);
+
+gradeBook2.addScore(70.0);
+gradeBook2.addScore(40.0);
+gradeBook2.addScore(35.0);
+gradeBook2.addScore(15.0);
+}
+
+@After
+public void tearDown()
+{
+
+gradeBook1 = null;
+gradeBook2 = null;
+}
+
+@Test
+public void sampleAddScoreTest()
+{
+assertTrue((gradeBook1.toString()).equals("75.0 85.0 "));
+assertTrue((gradeBook2.toString()).equals("70.0 40.0 35.0 15.0 "));
+
+}
+
+@Test
+public void sampleGetScoreTest()
+{
+assertEquals(2, gradeBook1.getScoreSize(), 0.1);
+assertEquals(4, gradeBook2.getScoreSize(), 0.1);
+}
+
+@Test
+public void sampleSumTest()
+{
+
+assertEquals(160.0, gradeBook1.sum(), 0.1);
+assertEquals(160.0, gradeBook2.sum(), 0.1);
+}
+
+
+@Test
+public void sampleMinimumTest()
+{
+assertEquals(75.0, gradeBook1.minimum(), 0.1);
+assertEquals(15.0, gradeBook2.minimum(), 0.1);
+}
+
+}
+
